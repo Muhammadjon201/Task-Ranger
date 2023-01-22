@@ -10,10 +10,23 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    //private let onboardingCompletedKey = "onboardingCompleted"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+//        if !UserDefaults.standard.bool(forKey: onboardingCompletedKey) {
+//                    // Show onboarding screens
+//                } else {
+//                    // Show the home screen or other content
+//                    //You can use the navigationController?.popToRootViewController(animated: Bool) or tabbarcontroller?.selectedIndex = 0 to navigate to home screen
+//                }
+//        
+//        func onboardingCompleted() {
+//                UserDefaults.standard.set(true, forKey: onboardingCompletedKey)
+//            }
+        
         return true
     }
 

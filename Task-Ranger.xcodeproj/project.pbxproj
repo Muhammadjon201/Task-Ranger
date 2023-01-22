@@ -7,15 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C495351D17E50AF108F5697 /* Pods_Task_Ranger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5336B8510449AB2CDD3FAB /* Pods_Task_Ranger.framework */; };
+		D5B09884297D24B00052C3E1 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B09883297D24B00052C3E1 /* TabbarController.swift */; };
+		D5B09888297D25240052C3E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B09887297D25240052C3E1 /* HomeViewController.swift */; };
+		D5B0988B297D271C0052C3E1 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0988A297D271C0052C3E1 /* CalendarViewController.swift */; };
+		D5B0988E297D277F0052C3E1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0988D297D277F0052C3E1 /* ProfileViewController.swift */; };
 		D5C6AF5A297AC27B006C4E6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C6AF59297AC27B006C4E6D /* AppDelegate.swift */; };
 		D5C6AF5C297AC27B006C4E6D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C6AF5B297AC27B006C4E6D /* SceneDelegate.swift */; };
 		D5C6AF5E297AC27B006C4E6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C6AF5D297AC27B006C4E6D /* ViewController.swift */; };
 		D5C6AF61297AC27B006C4E6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C6AF5F297AC27B006C4E6D /* Main.storyboard */; };
 		D5C6AF63297AC27E006C4E6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C6AF62297AC27E006C4E6D /* Assets.xcassets */; };
 		D5C6AF66297AC27E006C4E6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C6AF64297AC27E006C4E6D /* LaunchScreen.storyboard */; };
+		D5C6AF70297BACEB006C4E6D /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C6AF6F297BACEB006C4E6D /* OnboardingModel.swift */; };
+		D5C6AF72297BAD16006C4E6D /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C6AF71297BAD16006C4E6D /* OnboardingViewController.swift */; };
+		D5C6AF74297BAE71006C4E6D /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C6AF73297BAE71006C4E6D /* OnboardingCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15582F37D0A451B323AD012B /* Pods-Task-Ranger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task-Ranger.debug.xcconfig"; path = "Target Support Files/Pods-Task-Ranger/Pods-Task-Ranger.debug.xcconfig"; sourceTree = "<group>"; };
+		7E5336B8510449AB2CDD3FAB /* Pods_Task_Ranger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Task_Ranger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA435624A021F15E66661DFA /* Pods-Task-Ranger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task-Ranger.release.xcconfig"; path = "Target Support Files/Pods-Task-Ranger/Pods-Task-Ranger.release.xcconfig"; sourceTree = "<group>"; };
+		D5B09883297D24B00052C3E1 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		D5B09887297D25240052C3E1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D5B0988A297D271C0052C3E1 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		D5B0988D297D277F0052C3E1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D5C6AF56297AC27B006C4E6D /* Task-Ranger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Task-Ranger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C6AF59297AC27B006C4E6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5C6AF5B297AC27B006C4E6D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +39,9 @@
 		D5C6AF62297AC27E006C4E6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5C6AF65297AC27E006C4E6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5C6AF67297AC27E006C4E6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5C6AF6F297BACEB006C4E6D /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
+		D5C6AF71297BAD16006C4E6D /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		D5C6AF73297BAE71006C4E6D /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +49,61 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C495351D17E50AF108F5697 /* Pods_Task_Ranger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22AB58DE1827D11508A457F3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				15582F37D0A451B323AD012B /* Pods-Task-Ranger.debug.xcconfig */,
+				CA435624A021F15E66661DFA /* Pods-Task-Ranger.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BA8FC01AA98D047C393BF5EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E5336B8510449AB2CDD3FAB /* Pods_Task_Ranger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5B09885297D24F00052C3E1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D5B09887297D25240052C3E1 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D5B09886297D24F80052C3E1 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				D5B0988A297D271C0052C3E1 /* CalendarViewController.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		D5B0988C297D276C0052C3E1 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D5B0988D297D277F0052C3E1 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		D5C6AF4D297AC27B006C4E6D = {
 			isa = PBXGroup;
 			children = (
 				D5C6AF58297AC27B006C4E6D /* Task-Ranger */,
 				D5C6AF57297AC27B006C4E6D /* Products */,
+				22AB58DE1827D11508A457F3 /* Pods */,
+				BA8FC01AA98D047C393BF5EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +118,8 @@
 		D5C6AF58297AC27B006C4E6D /* Task-Ranger */ = {
 			isa = PBXGroup;
 			children = (
+				D5C6AF6E297BACC4006C4E6D /* View */,
+				D5C6AF6D297BACB1006C4E6D /* Model */,
 				D5C6AF59297AC27B006C4E6D /* AppDelegate.swift */,
 				D5C6AF5B297AC27B006C4E6D /* SceneDelegate.swift */,
 				D5C6AF5D297AC27B006C4E6D /* ViewController.swift */,
@@ -67,6 +131,27 @@
 			path = "Task-Ranger";
 			sourceTree = "<group>";
 		};
+		D5C6AF6D297BACB1006C4E6D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D5C6AF6F297BACEB006C4E6D /* OnboardingModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D5C6AF6E297BACC4006C4E6D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5B0988C297D276C0052C3E1 /* Profile */,
+				D5B09886297D24F80052C3E1 /* Calendar */,
+				D5B09885297D24F00052C3E1 /* Home */,
+				D5C6AF71297BAD16006C4E6D /* OnboardingViewController.swift */,
+				D5C6AF73297BAE71006C4E6D /* OnboardingCollectionViewCell.swift */,
+				D5B09883297D24B00052C3E1 /* TabbarController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5C6AF6A297AC27E006C4E6D /* Build configuration list for PBXNativeTarget "Task-Ranger" */;
 			buildPhases = (
+				45CBB7A488E1C7D012C7AC61 /* [CP] Check Pods Manifest.lock */,
 				D5C6AF52297AC27B006C4E6D /* Sources */,
 				D5C6AF53297AC27B006C4E6D /* Frameworks */,
 				D5C6AF54297AC27B006C4E6D /* Resources */,
+				F9E7B5801F3E010DAF93B174 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +220,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		45CBB7A488E1C7D012C7AC61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Task-Ranger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9E7B5801F3E010DAF93B174 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Task-Ranger/Pods-Task-Ranger-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Task-Ranger/Pods-Task-Ranger-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Task-Ranger/Pods-Task-Ranger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D5C6AF52297AC27B006C4E6D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5C6AF70297BACEB006C4E6D /* OnboardingModel.swift in Sources */,
 				D5C6AF5E297AC27B006C4E6D /* ViewController.swift in Sources */,
+				D5B0988E297D277F0052C3E1 /* ProfileViewController.swift in Sources */,
+				D5C6AF72297BAD16006C4E6D /* OnboardingViewController.swift in Sources */,
+				D5B09888297D25240052C3E1 /* HomeViewController.swift in Sources */,
 				D5C6AF5A297AC27B006C4E6D /* AppDelegate.swift in Sources */,
 				D5C6AF5C297AC27B006C4E6D /* SceneDelegate.swift in Sources */,
+				D5B0988B297D271C0052C3E1 /* CalendarViewController.swift in Sources */,
+				D5C6AF74297BAE71006C4E6D /* OnboardingCollectionViewCell.swift in Sources */,
+				D5B09884297D24B00052C3E1 /* TabbarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +418,7 @@
 		};
 		D5C6AF6B297AC27E006C4E6D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15582F37D0A451B323AD012B /* Pods-Task-Ranger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +447,7 @@
 		};
 		D5C6AF6C297AC27E006C4E6D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA435624A021F15E66661DFA /* Pods-Task-Ranger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
