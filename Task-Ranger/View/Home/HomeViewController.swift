@@ -11,7 +11,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "home"
+        view.backgroundColor = .white
     }
    
     override func viewWillAppear(_ animated: Bool) {

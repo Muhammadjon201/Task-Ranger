@@ -35,7 +35,7 @@ class OnboardingViewController: UIViewController {
         pageControl.pageIndicatorTintColor = .lightGray
         pageControl.currentPageIndicatorTintColor = UIColor(named: "baseBlueColor")
         pageControl.isEnabled = true
-        pageControl.isUserInteractionEnabled = false
+        pageControl.isUserInteractionEnabled = true
         return pageControl
     }()
     
@@ -57,8 +57,11 @@ class OnboardingViewController: UIViewController {
     // skipButton
     
     @objc func skipTapped(){
+//        let vc = TabbarController()
+//        navigationController?.pushViewController(vc, animated: true)
         let vc = TabbarController()
-        navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
     
     // startButton
@@ -66,7 +69,8 @@ class OnboardingViewController: UIViewController {
     @objc func startBtnTapped(){
         if currentPage == dataFlow.count - 1 {
             let vc = TabbarController()
-            self.navigationController?.pushViewController(vc, animated: true)
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
         }else{
             currentPage += 1
             let indexPath = IndexPath(item: currentPage, section: 0)

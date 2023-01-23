@@ -29,6 +29,9 @@ class TabbarController: UITabBarController {
         profile.tabBarItem.selectedImage = UIImage(named: "boldProfile")
         profile.tabBarItem.image = UIImage(named: "lightProfile")
         
+        tabBar.barTintColor = .blue
+        tabBar.isTranslucent = false
+                
         setViewControllers([home, calendar, profile], animated: true)
     }
 
