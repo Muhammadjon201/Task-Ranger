@@ -125,8 +125,8 @@ class CalendarViewController: UIViewController {
         return datePicker
     }()
     
-    let customAlert = UIAlertController()
-    
+    let calendarView = CustomAlert()
+        
     @objc func createBtnTapped(){
         
     }
@@ -136,39 +136,7 @@ class CalendarViewController: UIViewController {
     
     @objc func startBtnTapped(){
         
-//        let alert = UIAlertController(title: "Select Date", message: "", preferredStyle: .actionSheet)
-//                alert.popoverPresentationController?.sourceView = self.view
-//                alert.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
-//                alert.popoverPresentationController?.permittedArrowDirections = []
-//                alert.view.addSubview(datePicker)
-//                datePicker.frame = alert.view.bounds
-//                let done = UIAlertAction(title: "Done", style: .default) { (_) in
-//                    // use the selected date here
-//                    let dateFormatter = DateFormatter()
-//                    dateFormatter.dateFormat = "MM-dd-yyyy"
-//                    let dateString = dateFormatter.string(from: self.datePicker.date)
-//                    self.startBtn.setTitle(dateString, for: .normal)
-//                }
-//                alert.addAction(done)
-//                present(alert, animated: true, completion: nil)
-        
-        let customAlert = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
-        customAlert.center = self.view.center
-        customAlert.backgroundColor = UIColor.systemMint
-        customAlert.layer.cornerRadius = 10
-
-        let okBtn = UIButton(frame: CGRect(x: 0, y: customAlert.frame.height - 40, width: customAlert.frame.width, height: 40))
-        okBtn.setTitle("OK", for: .normal)
-        okBtn.setTitleColor(UIColor.white, for: .normal)
-        okBtn.backgroundColor = UIColor.blue
-        //okBtn.addTarget(self, action: #selector(okBtnTapped), for: .touchUpInside)
-        customAlert.addSubview(okBtn)
-
-    
-        
-        //okBtnTapped()
-        
-        self.view.addSubview(customAlert)
+        datePickerDoneBtn()
         
         if !isStartBtnSelected {
             startBtn.backgroundColor = UIColor(named: "CalendarBtnColor")
@@ -181,7 +149,22 @@ class CalendarViewController: UIViewController {
         }
     }
     
+    func datePickerDoneBtn(){
+        calendarView.center = self.view.center
+        calendarView.frame = CGRect(x: 50, y: 200, width: 300, height: 370)
+        self.view.addSubview(calendarView)
+        calendarView.delegate = self
+    }
+    
+    func datePickerDoneBtn2(){
+        calendarView.center = self.view.center
+        calendarView.frame = CGRect(x: 50, y: 200, width: 300, height: 370)
+        self.view.addSubview(calendarView)
+        calendarView.delegate = self
+    }
+ 
     @objc func endsBtnTapped(){
+        datePickerDoneBtn2()
         if !isEndBtnSelected {
             endBtn.backgroundColor = UIColor(named: "CalendarBtnColor")
             startBtn.backgroundColor = .white
@@ -283,13 +266,73 @@ class CalendarViewController: UIViewController {
             make.height.equalTo(48)
         }
         
-//        datePicker.snp.makeConstraints { make in
-//            make.top.equalTo(textView.snp.bottom).offset(5)
-//            make.left.equalTo(21)
-//            make.height.equalTo(40)
-//            make.width.equalTo(200)
-//        }
-        
     }
 
+}
+
+extension CalendarViewController: CustomAlertDelegate{
+    func okButtonTapped() {
+        self.calendarView.removeFromSuperview()
+    }
+    
+    func endButtonTapped() {
+        self.calendarView.removeFromSuperview()
+    }
+    
+}
+
+protocol CustomAlertDelegate: AnyObject {
+    func okButtonTapped()
+    func endButtonTapped()
+    //
+}
+
+class CustomAlert: UIView {
+    
+    weak var delegate: CustomAlertDelegate?
+    
+        let okBtn = UIButton()
+        let dPicker = UIDatePicker()
+        
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            
+            backgroundColor = .white
+            clipsToBounds = true
+            layer.cornerRadius = 10
+            
+            okBtn.setTitle("Done", for: .normal)
+            okBtn.setTitleColor(.white, for: .normal)
+            okBtn.backgroundColor = UIColor(named: "baseBlueColor")
+            okBtn.addTarget(self, action: #selector(okBtnTapped), for: .touchUpInside)
+            addSubview(okBtn)
+            
+            dPicker.datePickerMode = .dateAndTime
+            dPicker.preferredDatePickerStyle = .inline
+            dPicker.backgroundColor = UIColor(named: "datePickerColor")
+            addSubview(dPicker)
+            
+            okBtn.snp.makeConstraints { make in
+                make.bottom.equalToSuperview()
+                make.left.equalToSuperview()
+                make.right.equalToSuperview()
+                make.height.equalTo(40)
+            }
+            
+            dPicker.snp.makeConstraints { make in
+                make.top.equalToSuperview()
+                make.left.equalToSuperview()
+                make.right.equalToSuperview()
+                make.bottom.equalTo(okBtn.snp.top)
+            }
+            
+        }
+        
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        @objc func okBtnTapped(){
+            delegate?.okButtonTapped()
+        }
 }
