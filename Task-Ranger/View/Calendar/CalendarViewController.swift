@@ -67,10 +67,109 @@ class CalendarViewController: UIViewController {
         return endBtn
     }()
     
+    lazy var titleLbl: UILabel = {
+        let titleLbl = UILabel()
+        titleLbl.text = "Title"
+        titleLbl.textColor = UIColor(named: "baseBlueColor")
+        titleLbl.font = .systemFont(ofSize: 14, weight: .medium)
+        return titleLbl
+    }()
+    
+    lazy var textField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Enter your task"
+        textField.layer.cornerRadius = 10
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = startBtnBorderColor.cgColor
+        textField.textAlignment = .center
+        return textField
+    }()
+    
+    lazy var descriptionLbl: UILabel = {
+        let descriptionLbl = UILabel()
+        descriptionLbl.text = "Description"
+        descriptionLbl.textColor = UIColor(named: "baseBlueColor")
+        descriptionLbl.font = .systemFont(ofSize: 14, weight: .medium)
+        return descriptionLbl
+    }()
+    
+    let textViewPlaceholder = "Describe your task"
+    lazy var textView: UITextView = {
+        let textView = UITextView()
+        textView.layer.borderWidth = 1
+        textView.layer.borderColor = startBtnBorderColor.cgColor
+        textView.text = textViewPlaceholder
+        textView.textColor = .lightGray
+        
+        return textView
+    }()
+    
+    lazy var createBtn: UIButton = {
+        let createBtn = UIButton(type: .system)
+        createBtn.setTitle("Create", for: .normal)
+        createBtn.layer.cornerRadius = 10
+        createBtn.backgroundColor = UIColor(named: "baseBlueColor")
+        createBtn.setTitleColor(.white, for: .normal)
+        createBtn.addTarget(self, action: #selector(createBtnTapped), for: .touchUpInside)
+        return createBtn
+    }()
+    
+    lazy var datePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.isHidden = true
+        //datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+        //datePicker.backgroundColor = .red
+//        datePicker.frame.size = CGSize(width: 0, height: 400)
+//        datePicker.preferredDatePickerStyle = .compact
+        return datePicker
+    }()
+    
+    let customAlert = UIAlertController()
+    
+    @objc func createBtnTapped(){
+        
+    }
+    
     var isStartBtnSelected = false
     var isEndBtnSelected = false
-   
+    
     @objc func startBtnTapped(){
+        
+//        let alert = UIAlertController(title: "Select Date", message: "", preferredStyle: .actionSheet)
+//                alert.popoverPresentationController?.sourceView = self.view
+//                alert.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+//                alert.popoverPresentationController?.permittedArrowDirections = []
+//                alert.view.addSubview(datePicker)
+//                datePicker.frame = alert.view.bounds
+//                let done = UIAlertAction(title: "Done", style: .default) { (_) in
+//                    // use the selected date here
+//                    let dateFormatter = DateFormatter()
+//                    dateFormatter.dateFormat = "MM-dd-yyyy"
+//                    let dateString = dateFormatter.string(from: self.datePicker.date)
+//                    self.startBtn.setTitle(dateString, for: .normal)
+//                }
+//                alert.addAction(done)
+//                present(alert, animated: true, completion: nil)
+        
+        let customAlert = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        customAlert.center = self.view.center
+        customAlert.backgroundColor = UIColor.systemMint
+        customAlert.layer.cornerRadius = 10
+
+        let okBtn = UIButton(frame: CGRect(x: 0, y: customAlert.frame.height - 40, width: customAlert.frame.width, height: 40))
+        okBtn.setTitle("OK", for: .normal)
+        okBtn.setTitleColor(UIColor.white, for: .normal)
+        okBtn.backgroundColor = UIColor.blue
+        //okBtn.addTarget(self, action: #selector(okBtnTapped), for: .touchUpInside)
+        customAlert.addSubview(okBtn)
+
+    
+        
+        //okBtnTapped()
+        
+        self.view.addSubview(customAlert)
+        
         if !isStartBtnSelected {
             startBtn.backgroundColor = UIColor(named: "CalendarBtnColor")
             endBtn.backgroundColor = .white
@@ -108,6 +207,11 @@ class CalendarViewController: UIViewController {
         backView.addSubview(endLbl)
         backView.addSubview(startBtn)
         backView.addSubview(endBtn)
+        backView.addSubview(titleLbl)
+        backView.addSubview(textField)
+        backView.addSubview(descriptionLbl)
+        backView.addSubview(textView)
+        backView.addSubview(createBtn)
         
         addTaskLbl.snp.makeConstraints { make in
             make.top.equalTo(80)
@@ -118,7 +222,7 @@ class CalendarViewController: UIViewController {
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.bottom.equalToSuperview()
-            make.height.equalTo(view.snp.height).multipliedBy(0.75)
+            make.height.equalTo(view.snp.height).multipliedBy(0.8)
         }
         
         backView.layer.cornerRadius = 50
@@ -131,7 +235,6 @@ class CalendarViewController: UIViewController {
         
         endLbl.snp.makeConstraints { make in
             make.top.equalTo(33)
-            //make.right.equalTo(-21)
             make.left.equalTo(endBtn.snp.left)
         }
         
@@ -148,6 +251,45 @@ class CalendarViewController: UIViewController {
             make.height.equalTo(48)
             make.width.equalTo(160)
         }
+        
+        titleLbl.snp.makeConstraints { make in
+            make.top.equalTo(startBtn.snp.bottom).offset(20)
+            make.left.equalTo(21)
+        }
+        
+        textField.snp.makeConstraints { make in
+            make.top.equalTo(titleLbl.snp.bottom).offset(5)
+            make.left.equalTo(21)
+            make.right.equalTo(-21)
+            make.height.equalTo(48)
+        }
+        
+        descriptionLbl.snp.makeConstraints { make in
+            make.top.equalTo(textField.snp.bottom).offset(50)
+            make.left.equalTo(21)
+        }
+        
+        textView.snp.makeConstraints { make in
+            make.top.equalTo(descriptionLbl.snp.bottom).offset(5)
+            make.left.equalTo(21)
+            make.right.equalTo(-21)
+            make.height.equalTo(backView.snp.height).multipliedBy(0.3)
+        }
+        
+        createBtn.snp.makeConstraints { make in
+            make.left.equalTo(21)
+            make.right.equalTo(-21)
+            make.bottom.equalTo(-15)
+            make.height.equalTo(48)
+        }
+        
+//        datePicker.snp.makeConstraints { make in
+//            make.top.equalTo(textView.snp.bottom).offset(5)
+//            make.left.equalTo(21)
+//            make.height.equalTo(40)
+//            make.width.equalTo(200)
+//        }
+        
     }
 
 }

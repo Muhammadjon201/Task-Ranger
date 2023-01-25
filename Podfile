@@ -7,4 +7,5 @@ target 'Task-Ranger' do
 
   # Pods for Task-Ranger
 	pod 'SnapKit'
+	pod 'IQKeyboardManagerSwift'
 end
